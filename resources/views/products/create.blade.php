@@ -13,7 +13,7 @@
         <input type="text" name="name" placeholder="name">
         <input type="text" name="price" placeholder="price">
         <textarea name="description">description</textarea>
-        <input type="submit">
+        <input type="submit" value="Create">
     </form>
 
 </body>
