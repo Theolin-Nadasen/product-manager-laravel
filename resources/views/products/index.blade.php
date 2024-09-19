@@ -8,11 +8,18 @@
 <body>
     <h1>Products</h1>
 
+    @if(session()->has('success'))
+
+    <p> {{session('success')}} </p>
+
+    @endif
+
     <table border="2">
         <tr>
             <th>Name</th>
             <th>price</th>
             <th>Description</th>
+            <th>Edit</th>
         </tr>
 
         @foreach($products as $product)
@@ -21,6 +28,7 @@
             <td>{{$product->name}}</td>
             <td>{{$product->price}}</td>
             <td>{{$product->description}}</td>
+            <td><a href="{{route('product.edit', ['product' => $product])}}">Edit</a></td>
         </tr>
 
         @endforeach
