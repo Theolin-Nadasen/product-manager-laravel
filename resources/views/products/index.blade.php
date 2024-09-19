@@ -10,7 +10,7 @@
 
     @if(session()->has('success'))
 
-    <p> {{session('success')}} </p>
+    <p>{{session('success')}}</p>
 
     @endif
 
@@ -19,6 +19,7 @@
             <th>Name</th>
             <th>price</th>
             <th>Description</th>
+            <th>Delete</th>
             <th>Edit</th>
         </tr>
 
@@ -28,6 +29,13 @@
             <td>{{$product->name}}</td>
             <td>{{$product->price}}</td>
             <td>{{$product->description}}</td>
+            <td>
+                <form action="{{route('product.delete', ['product' => $product])}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
             <td><a href="{{route('product.edit', ['product' => $product])}}">Edit</a></td>
         </tr>
 
