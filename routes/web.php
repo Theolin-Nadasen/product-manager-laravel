@@ -6,7 +6,7 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return redirect(route('product.index'));
-});
+})->name('index');
 
 
 Route::get('/products', [ProductController::class,'index'])->name('product.index');
